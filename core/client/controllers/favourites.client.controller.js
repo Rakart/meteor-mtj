@@ -12,8 +12,10 @@ angular.module('core').controller('FavouritesController', ['$scope', '$meteor', 
 
             $scope.$meteorSubscribe('favourites', $scope.favIds).
                 then(function(subHandle){
-                    $scope.favourites = $scope.$meteorCollection(Meteor.users, false);
-                    console.log('subbed!');
+                    $scope.favourites = $scope.$meteorCollection(function(){
+                        return Meteor.users.find({ _id: {$in: $scope.favIds }});
+                    }, false);
+                    console.log('Got Favourites! ', $scope.favourites);
             });
         }
     }

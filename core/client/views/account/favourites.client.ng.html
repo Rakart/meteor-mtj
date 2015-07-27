@@ -5,8 +5,8 @@
 </ul>
 <md-button ng-click="init()">Get Favourites</md-button>
 
-<h1>Here is a list of all FAVOURITES! </h1>
+<h1>Here is a list of my favourite tutor's names! </h1>
 <ul>
-	<li ng-repeat="fav in favourites">{{ fav }}
+	<li ng-repeat="fav in favourites">{{ fav.first_name + ' ' + fav.last_name }}
 	</li>
 </ul>
