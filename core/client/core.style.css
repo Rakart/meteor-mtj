@@ -1,0 +1,121 @@
+/* core CSS declarations go here */
+.content {
+	margin-top: 50px;
+}
+.undecorated-link:hover {
+	text-decoration: none;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}
+
+img.bg {
+	/* Set rules to fill background */
+	min-height: 100%;
+	min-width: 1024px;
+
+	/* Set up proportionate scaling */
+	width: 100%;
+	height: auto;
+
+	/* Set up positioning */
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+md-list-item .md-list-item-inner > md-icon:first-child {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+/* fixes md-backdrop extending page height */
+md-backdrop, md-sidenav {
+	position: fixed;
+	overflow: hidden;
+}
+
+.home-page {
+	margin-top: 350px;
+}
+
+.home-sign-up {
+	border-radius: 5px;
+	opacity: 0.9;
+}
+
+/*Here is the styles for the upload-image-modal*/
+.drop-box {
+  background: #F8F8F8;
+  border: 5px dashed #DDD;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  padding: 50px;
+  margin: auto;
+}
+
+.drop-box.dragover {
+  border: 5px dashed blue;
+}
+
+.drop-box.dragover-err {
+  border: 5px dashed red;
+}
+
+.uploaded-image {
+  max-height: 300px;
+  max-width: 200px;
+}
+
+.ng-crop-container {
+  width: 100%;
+  height: 300px;
+}
+
+.add-photo-dialog {
+  width: 60%;
+}
+
+.add-photo-dialog h3 {
+	text-align: center;
+}
+
+.images-container-title {
+  width: 100%;
+}
+
+.identity {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+/*.profile-image-container {
+  width: 200px;
+  height: 245px;
+  float: left;
+  padding: 2px;
+  margin-right: 10px;
+  border: 2px solid #F8F8F8;
+  position: relative;
+}
+
+.profile-image-container .profile-image {
+	position: absolute;
+    top: 5px;
+    left: 5px;
+    background-color: #f8f8f8;
+}
+
+.profile-image-container img {
+	max-width: 200px;
+    max-height: 200px;
+    margin: auto;
+}
+
+.images-container {
+  background-color: aliceblue;
+}*/
+
+

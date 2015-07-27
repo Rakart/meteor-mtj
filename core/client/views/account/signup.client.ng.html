@@ -1,0 +1,28 @@
+<section class="row">
+	<div layout="column">
+		<form name="userForm" ng-submit="AC.signup()">
+			<div layout="row" layout-wrap>
+				<md-content layout="column" flex-gt-sm="20" flex-gt-md="33" flex-sm="10"></md-content>
+				<md-content layout-padding layout="column" flex-sm="80" flex-gt-sm="60" flex-gt-md="33" class="md-primary">
+					<div class="md-whiteframe-z3 login-form" layout-padding>
+						<h1 class="md-display-1 text-center">Sign Up</h1>
+						<md-input-container flex>
+							<label>Email</label>
+							<input name="email" ng-model="AC.credentials.email" type="email" required email>
+						</md-input-container>
+						<md-input-container flex>
+							<label>Password</label>
+							<input name="password" ng-model="AC.credentials.password" type="password" required>
+						</md-input-container>
+						<br>
+						<br>
+						<div layout-padding layout-align="center center" layout="row">
+							<md-button type="submit" value="Signup" class="md-accent md-raised">Sign Up</md-button>
+						</div>
+					</div><!-- end of sign-up card -->
+				</md-content>
+				<div layout="column" flex-gt-sm="20" flex-gt-md="33" flex-sm="10"></div>
+			</div>
+		</form>
+	</div>
+</section>

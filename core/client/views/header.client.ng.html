@@ -1,0 +1,61 @@
+<div ng-controller="HeaderController" flex>
+	<md-toolbar layout="row" class="md-whiteframe-z1 mtj-menu">
+		<div class="md-toolbar-tools">
+			<md-button class="md-icon-button" ng-click="toggleLeft()" aria-label="Menu">
+				<i class="glyphicon glyphicon-menu-hamburger"></i>
+			</md-button>
+			<span>
+				<md-button ng-click="navigate('home')">My Tutor Jungle</md-button>
+			</span>
+
+			<span flex></span>
+			<div>
+				<h5 ng-show="$root.currentUser">Logged in as ({{ $root.currentUser.emails[0].address }})</h5>
+				<md-button ng-click="navigate('login')" ng-hide="$root.currentUser">Login</md-button>
+				<md-button ng-click="navigate('signup')" ng-hide="$root.currentUser">Sign Up</md-button>
+			</div>
+			<div>
+				<md-button ng-click="navigate('logout')" ng-show="$root.currentUser">Logout</md-button>
+			</div>
+		</div>
+	</md-toolbar>
+</div>
+
+<section layout="row" flex>
+	<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+		
+		<md-toolbar>
+			<h1 class="md-toolbar-tools">My Tutor Jungle Dashboard</h1>
+		</md-toolbar>
+
+		<md-content data-ng-controller="HeaderController" layout-fill>
+			<md-list>
+
+				<md-subheader>My Tutor Jungle</md-subheader>
+				<md-list-item ng-click="navigate('pricing')">
+					<p>Pricing Plans</p>
+				</md-list-item>
+				<md-list-item ng-click="navigate('jungle')">
+					<p>Tutor Jungle</p>
+				</md-list-item>
+
+				<md-divider></md-divider>
+				<div ng-show="$root.currentUser">
+					<md-subheader>My Account</md-subheader>
+					<md-list-item ng-click="navigate('edit-profile')">
+						<p>Edit Profile</p>
+					</md-list-item>
+					<md-list-item ng-click="navigate('favourites')">
+						<p>My Favourites List</p>
+					</md-list-item>
+					
+					<md-list-item ng-click="navigate('logout')">
+						<p>Logout</p>
+					</md-list-item>
+				</div>
+			</md-list>
+		</md-content>
+
+	</md-sidenav>
+</section>
+

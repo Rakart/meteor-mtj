@@ -1,0 +1,52 @@
+<md-content class="md-padding" layout="row">
+    <md-card flex="40" offset="30" data-ng-repeat="user in tutors" class="jungle-card md-whiteframe-z3" ng-show='selected == $index'>
+        <md-toolbar layout="row" class="md-primary">
+            <div class="md-toolbar-tools md-toolbar-tools-bottom">
+                <h1 class="md-title text-center">Need a reliable tutor?</h1>
+                <span flex></span>
+                <i class="glyphicon glyphicon-search md-hue-2 md-primary"></i>
+            </div>
+        </md-toolbar>
+        <img class="tutor-profile-image" src="{{ images.src() }}"/>
+        <div class="md-actions" layout="row" layout-align="end center" layout-padding>
+            <md-button ng-click="addFavourite(user._id)" class="md-accent md-fab" aria-label="addFavourite">
+                <i class="glyphicon glyphicon-heart"></i>
+            </md-button>
+        </div>
+
+
+        <md-card-content>
+            <div class="tutor-profile">
+                <h1 class="md-title tutor-profile-name text-left">{{user.first_name + ' ' + user.last_name + ' ' + user._id}}</h1>
+                <h5 class="text-muted">{{user.experience.years}} teaching experience</h5>
+            </div>
+            <md-list-item>
+                <div class="md-list-item-text">
+                    <h3>{{user.qualifications.highest}}</h3>
+                    <p class="text-muted">Highest Education Level</p>
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item>
+                <div class="md-list-item-text">
+                    <h3>{{user.commitmentPeriod}}</h3>
+                    <p class="text-muted">Commitment Period</p>
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item>
+                <div class="md-list-item-text">
+                    <h3>{{user.mobileNo}}</h3>
+                    <p class="text-muted">Phone Number</p>
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+            <section class="md-list-item-text" layout="row" layout-align="center center">
+                <md-button ng-click="previousUser($index)">Previous</md-button>
+                <md-button ng-click="nextUser($index)">Next</md-button>
+                <md-button ng-click="resetAllFav()">Reset Favourites!</md-button>
+            </section>
+        </md-card-content>
+    </md-card>
+</md-content>
+
