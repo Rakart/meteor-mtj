@@ -20,11 +20,11 @@
 			<md-content layout-padding layout="row" layout-sm="column">
 				<md-input-container flex-gt-sm="33" flex-sm>
 					<label>NRIC</label>
-					<input ng-model="user.nric">
+					<input ng-pattern="/^[SFTG]\d{7}[A-Z]$/" ng-model="user.nric">
 				</md-input-container>
 				<md-input-container flex>
 					<label>Mobile No.</label>
-					<input ng-model="user.mobileNo">
+					<input ng-pattern="/^[89]\d{7}$/" ng-model="user.mobileNo">
 				</md-input-container>
 				<md-input-container flex-gt-sm="20" flex-sm>
 					<label>Date of Birth</label>
@@ -34,7 +34,7 @@
 
 			<md-content layout-padding layout="row" layout-sm="column">
 				<md-input-container flex-gt-sm="33" flex>
-					<label>Block Number / Building Name</label>
+					<label>Block Number OR Building Name</label>
 					<input ng-model="user.address.blockNo">
 				</md-input-container>
 				<md-input-container flex>

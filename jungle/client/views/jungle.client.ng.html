@@ -1,5 +1,5 @@
 <md-content class="md-padding" layout="row">
-    <md-card flex="40" offset="30" data-ng-repeat="user in tutors" class="jungle-card md-whiteframe-z3" ng-show='selected == $index'>
+    <md-card flex="40" offset="30" data-ng-repeat="user in tutors" class="jungle-card md-whiteframe-z3" ng-show="selected == $index; tutorValidate(user) ">
         <md-toolbar layout="row" class="md-primary">
             <div class="md-toolbar-tools md-toolbar-tools-bottom">
                 <h1 class="md-title text-center">Need a reliable tutor?</h1>
@@ -17,7 +17,7 @@
 
         <md-card-content>
             <div class="tutor-profile">
-                <h1 class="md-title tutor-profile-name text-left">{{user.first_name + ' ' + user.last_name + ' ' + user._id}}</h1>
+                <h1 class="md-title tutor-profile-name text-left">{{user.first_name + ' ' + user.last_name}}</h1>
                 <h5 class="text-muted">{{user.experience.years}} teaching experience</h5>
             </div>
             <md-list-item>

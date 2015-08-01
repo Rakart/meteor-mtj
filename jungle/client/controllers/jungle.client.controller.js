@@ -8,7 +8,7 @@ angular.module('jungle').controller('JungleController', ['$scope', '$meteor',
 
         // binds tutors from mongo to the scope for browsing with limited access to 'tutor' information.
         $scope.tutors = $meteor.collection(function(){
-            return Meteor.users.find({identity: 'tutor'}, 
+            return Meteor.users.find({identity: 'tutor'},
 
                 { fields: {
                     first_name: 1,
@@ -21,6 +21,20 @@ angular.module('jungle').controller('JungleController', ['$scope', '$meteor',
             );
 
             }, false).subscribe('tutors');
+
+        // validates the tutor has filled in the required fields to be displayed inside the tutor Jungle
+        $scope.tutorValidate = function(user) {
+            if (user.first_name != '' &&
+                user.qualifications != {} &&
+                user.experience != {} &&
+                user.commitmentPeriod != '') {
+                return true;
+            
+            } else {
+                
+                return false;
+            }
+        }
 
         // Navigates through the tutors available.
         $scope.selected = 0;

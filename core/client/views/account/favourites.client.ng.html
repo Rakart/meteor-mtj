@@ -1,12 +1,6 @@
-<h1>Here is a list of all my favourite tutors! </h1>
-<ul>
-	<li ng-repeat="fav in User.favourites">{{ fav }}
-	</li>
-</ul>
-<md-button ng-click="init()">Get Favourites</md-button>
-
-<h1>Here is a list of my favourite tutor's names! </h1>
+<h1>My Favourite Tutors</h1>
 <ul>
 	<li ng-repeat="fav in favourites">{{ fav.first_name + ' ' + fav.last_name }}
+		<!-- <md-button ng-click="remove(fav._id)">Remove Favourite</md-button> -->
 	</li>
 </ul>

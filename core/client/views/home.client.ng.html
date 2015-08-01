@@ -1,10 +1,8 @@
-<h1>Here is the list of all my Users!</h1>
-
+<h1>Current user database</h1>
 <md-card class="user-database" ng-repeat="user in users">
 	<md-card-content layout="row" layout-align="space-between center">
-		<p>{{ user.first_name + ' ' + user.last_name + ': ' + user.emails[0].address}} 
+		<p>{{ user.first_name + ' ' + user.last_name + ': ' + user.emails[0].address + ' (' + user.identity + ')' }} 
 		</p>
-		<p class="identity">{{user.identity}}</p>
-		<md-button ng-click="remove(user)">Remove User</md-button>
+		<md-button ng-click="remove(user._id)">Remove User</md-button>
 	</md-card-content>
 </md-card>

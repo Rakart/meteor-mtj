@@ -8,7 +8,7 @@ angular.module('core').controller('HomeController', ['$scope', '$meteor',
 		console.log($scope.thisUser);
 		
 		$scope.remove = function(user) {
-			$scope.users.remove(user.userId);
+			$scope.users.remove(user);
 		}
     }
 ]);
