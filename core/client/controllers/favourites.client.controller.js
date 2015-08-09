@@ -1,19 +1,24 @@
-angular.module('core').controller('FavouritesController', ['$scope', '$meteor', '$state',
-	function($scope, $meteor, $state) {
-
-        $scope.favIds = [];
+angular.module('core')
+    .controller('FavouritesController', ['$scope', '$meteor', '$state', 'Favourites',
+	
+    function($scope, $meteor, $state, Favourites) {
+        
         $scope.User = $scope.$meteorObject(Meteor.users, { _id: Meteor.userId() }, false).subscribe('thisUser');
 
-        for (var prop in $scope.User.favourites) {
-            $scope.favIds[prop] = $scope.User.favourites[prop];
-        }
-
-        $scope.$meteorSubscribe('favourites', $scope.favIds).
+        $scope.$meteorSubscribe('favourites', Favourites.getFavourites($scope.User).userIds).
             then(function(subHandle){
-                $scope.favourites = $scope.$meteorCollection(function(){
-                    return Meteor.users.find({ _id: {$in: $scope.favIds }});
-                }, false);
+                $scope.favourites = Favourites.getFavourites($scope.User).users;
                 console.log('Got Favourites! ', $scope.favourites);
         });
+
+        $scope.removeFav = function(fav) {
+        
+            Favourites.removeFavourite($scope.User, fav._id);
+            
+            console.log($scope.favourites);
+        };
+
     }
 ]);
+
+
