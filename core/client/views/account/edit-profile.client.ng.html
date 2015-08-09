@@ -1,18 +1,24 @@
 <section class="row">
 	<div layout="column">
 		<md-content class="text-center" layout-padding>
-			<h1 class="md-title">My Tutor Profile</h1>
+			<h1 class="md-title">My Profile</h1>
 		</md-content>
 		
 		<form name="userForm">
 			<md-content layout-padding layout="row" layout-sm="column" class="md-primary">
-				<md-input-container flex>
+				<md-input-container flex-gt-sm="33" flex-sm>
 					<label>First Name</label>
 					<input ng-model="user.first_name" required>
 				</md-input-container>
 				<md-input-container flex>
 					<label>Last Name</label>
 					<input ng-model="user.last_name" required>
+				</md-input-container>
+				<md-input-container flex-gt-sm="20" flex>
+					<md-select ng-model="user.gender" aria-label="Gender" placeholder="Gender">
+						<label layout-padding>Gender</label>
+						<md-option ng-value="gender" ng-repeat="gender in ['Male', 'Female']">{{gender}}</md-option>
+					</md-select>
 				</md-input-container>
 			</md-content>
 			
@@ -225,7 +231,7 @@
 				</fieldset>
 			</div>
 
-			<md-input-container flex-gt-sm="50" layout="column" layout-align="start" flex>
+			<md-input-container flex-gt-sm="50" layout="column" layout-align="start" layout-padding flex>
 				<h1 class="md-title">Type of User</h1>
 				<md-select ng-model="user.identity" aria-label="Identity" placeholder="Are you a tutor or a parent?">
 					<label layout-padding>Are you a tutor or a parent?</label>

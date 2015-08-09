@@ -91,6 +91,10 @@ md-backdrop, md-sidenav {
   text-align: right;
 }
 
+.profile-indent {
+  margin-left: 1em;
+}
+
 /*.profile-image-container {
   width: 200px;
   height: 245px;

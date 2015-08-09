@@ -1,6 +1,74 @@
-<h1>My Favourite Tutors</h1>
-<ul>
-	<li ng-repeat="fav in favourites">{{ fav.first_name + ' ' + fav.last_name }}
-		<!-- <md-button ng-click="remove(fav._id)">Remove Favourite</md-button> -->
-	</li>
-</ul>
+<div class="gridListdemoBasicUsage">
+  <md-grid-list
+        md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+        md-row-height-gt-md="1:1" md-row-height="2:2"
+        md-gutter="12px" md-gutter-gt-sm="8px" >
+    <md-grid-tile class="blue" ng-repeat="fav in favourites"
+        md-rowspan="2" md-colspan="2" md-colspan-sm="1">
+      <h1>Call Me!</h1>
+      <md-button ng-click="removeFav(fav)">Remove Favourite</md-button>
+      <md-grid-tile-footer>
+        <h3># {{fav.first_name + ' ' + fav.last_name}} from {{fav.address.roadName}}</h3>
+      </md-grid-tile-footer>
+  	</md-grid-tile>
+  </md-grid-list>
+</div>
+
+
+
+<!-- <h1>My Favourite Tutors</h1>
+<md-content class="md-padding" layout="row" layout-fill>
+    <md-card flex data-ng-repeat="fav in favourites" class="md-whiteframe-z3">
+        <md-toolbar layout="row" class="md-primary">
+            <div class="md-toolbar-tools md-toolbar-tools-bottom">
+                <h1 class="md-title text-center">{{ fav.first_name + ' ' + fav.last_name }}</h1>
+            </div>
+        </md-toolbar>
+        <div class="md-actions" layout="row" layout-align="end center" layout-padding>
+            <md-button ng-click="removeFav(fav._id)" class="md-accent md-fab" aria-label="addFavourite">
+                <md-tooltip>Remove Favourite</md-tooltip>
+                <i class="glyphicon glyphicon-remove"></i>
+            </md-button>
+        </div>
+        <md-card-content>
+            <md-list-item>
+                <div class="md-list-item-text">
+                    <h3 class="md-headline">Highest Education Level</h3>
+                    <p class="md-subhead profile-indent">{{fav.qualifications.highest}}</p>
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item>
+                <div class="md-list-item-text">
+                    <h3 class="md-headline">Commitment Period</h3>
+                    <p class="md-subhead profile-indent">{{fav.commitmentPeriod}}</p>
+                </div>
+            </md-list-item>
+            <md-divider></md-divider>
+            <md-list-item>
+                <div class="md-list-item-text">
+                    <h3 class="md-headline">Best Attributes</h3>
+                    <p class="md-subhead profile-indent" ng-show="user.experience.homework">Finishing your child's homework</p>
+                    <p class="md-subhead profile-indent" ng-show="user.experience.oneGrade">Pushing your child's grade up by one.</p>
+                    <p class="md-subhead profile-indent" ng-show="user.experience.bigGrade">Largely improving your child's results by more than one grade. (E.g. Fail to Distinction)</p>
+                    <p class="md-subhead profile-indent" ng-show="user.experience.exams">Using top schools’ exam papers as practice for your child's tests & examinations.</p>
+                    <p class="md-subhead profile-indent" ng-show="user.experience.interest">Develops creative and fun methods of learning to instill interest in your child's subjects.</p>
+                    <p class="md-subhead profile-indent" ng-show="user.experience.patience">Coaching special needs students with patience and commitment.</p>
+                </div>
+            </md-list-item>
+        </md-card-content>
+    </md-card>
+</md-content> -->
+
+<!-- 
+
+<md-grid-list
+        md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+        md-row-height-gt-md="1:1" md-row-height="2:2"
+        md-gutter="12px" md-gutter-gt-sm="8px" >
+    <md-grid-tile class="gray"
+        md-rowspan="3" md-colspan="2" md-colspan-sm="1">
+      <md-grid-tile-footer>
+        <h3>#1: (3r x 2c)</h3>
+      </md-grid-tile-footer>
+    </md-grid-tile> -->

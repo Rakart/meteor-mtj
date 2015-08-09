@@ -13,6 +13,7 @@ angular.module('core').controller('ProfileController', ['$scope', '$meteor', '$s
                 $set: {
                     "first_name"    : $scope.user.first_name,
                     "last_name"     : $scope.user.last_name,
+                    "gender"        : $scope.user.gender,
                     "nric"          : $scope.user.nric,
                     "mobileNo"      : $scope.user.mobileNo,
                     "dob"           : $scope.user.dob,

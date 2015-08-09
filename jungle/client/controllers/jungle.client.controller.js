@@ -5,17 +5,24 @@ angular.module('jungle').controller('JungleController', ['$scope', '$meteor',
         $scope.images = $meteor.collectionFS(Images, false, Images).subscribe('images');
         $scope.user = $meteor.object(Meteor.users, { _id: Meteor.userId() }, false).subscribe('thisUser');
 
+        // Navigates through the tutors available.
+        $scope.selected = 0;
 
         // binds tutors from mongo to the scope for browsing with limited access to 'tutor' information.
         $scope.tutors = $meteor.collection(function(){
-            return Meteor.users.find({identity: 'tutor'},
-
+            return Meteor.users.find({identity: 'tutor',
+                                      commitmentPeriod: { $nin: [''] },
+                                      experience: { $nin: [''] },
+                                      qualifications: { $nin: [''] }, 
+                                      _id: { $nin: [$scope.user._id] }
+                                    },
                 { fields: {
                     first_name: 1,
                     last_name: 1,
                     qualifications: 1,
                     experience: 1,
-                    commitmentPeriod: 1
+                    commitmentPeriod: 1,
+                    mobileNo: 1
                     }
                 }
             );
@@ -24,10 +31,8 @@ angular.module('jungle').controller('JungleController', ['$scope', '$meteor',
 
         // validates the tutor has filled in the required fields to be displayed inside the tutor Jungle
         $scope.tutorValidate = function(user) {
-            if (user.first_name != '' &&
-                user.qualifications != {} &&
-                user.experience != {} &&
-                user.commitmentPeriod != '') {
+            if (user.first_name !== '' &&
+                user.commitmentPeriod !== '') {
                 return true;
             
             } else {
@@ -35,9 +40,6 @@ angular.module('jungle').controller('JungleController', ['$scope', '$meteor',
                 return false;
             }
         }
-
-        // Navigates through the tutors available.
-        $scope.selected = 0;
 
         // scrolls to the next user inside tutor-jungle.
         $scope.nextUser = function(selected) {
@@ -47,6 +49,7 @@ angular.module('jungle').controller('JungleController', ['$scope', '$meteor',
             } else {
                 $scope.selected = selected + 1;
             }
+
         };
 
         // scrolls to previous user inside tutor-jungle.
@@ -57,6 +60,7 @@ angular.module('jungle').controller('JungleController', ['$scope', '$meteor',
             } else {
                 $scope.selected = selected - 1;
             }
+
         };
 
         // js function to check if obj is inside array 'a'

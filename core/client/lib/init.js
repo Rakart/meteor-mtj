@@ -8,7 +8,7 @@ angular.module(ApplicationConfiguration.applicationModuleName).config([
 		//$locationProvider.html5Mode(true).hashPrefix('!');
 
 		$mdThemingProvider.theme('default')
-			.primaryPalette('indigo', {
+			.primaryPalette('light-blue', {
 				'default': '500', // by default use shade 400 from the pink palette for primary intentions
 				'hue-1': '50', // use shade 100 for the <code>md-hue-1</code> class
 				'hue-2': '100', // use shade 600 for the <code>md-hue-2</code> class
@@ -16,14 +16,14 @@ angular.module(ApplicationConfiguration.applicationModuleName).config([
 			})
 			// If you specify less than all of the keys, it will inherit from the
 			// default shades
-			.accentPalette('orange', {
+			.accentPalette('indigo', {
 				'default': 'A400', // use shade 200 for default, and keep all other shades the same
 				'hue-1': 'A100',
 				'hue-2': 'A400'
-			})
-			.backgroundPalette('light-blue', {
-				'default': '50'
 			});
+			// .backgroundPalette('light-blue', {
+			// 	'default': '50'
+			// });
 
 		// Register icons
 		$mdIconProvider
