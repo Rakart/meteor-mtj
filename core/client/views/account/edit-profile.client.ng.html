@@ -1,9 +1,13 @@
 <section class="row">
-	<div layout="column">
-		<md-content class="text-center" layout-padding>
-			<h1 class="md-title">My Profile</h1>
-		</md-content>
-		
+	<div class="md-whiteframe-z4 profile-info" layout-margin layout="column">
+		<md-toolbar class="md-accent">
+            <div class="md-toolbar-tools md-toolbar-tools-bottom">
+                <h4 class="md-title text-left">
+                	My Tutor Profile
+                </h4>
+            </div>
+        </md-toolbar>
+
 		<form name="userForm">
 			<md-content layout-padding layout="row" layout-sm="column" class="md-primary">
 				<md-input-container flex-gt-sm="33" flex-sm>
@@ -14,11 +18,9 @@
 					<label>Last Name</label>
 					<input ng-model="user.last_name" required>
 				</md-input-container>
-				<md-input-container flex-gt-sm="20" flex>
-					<md-select ng-model="user.gender" aria-label="Gender" placeholder="Gender">
-						<label layout-padding>Gender</label>
-						<md-option ng-value="gender" ng-repeat="gender in ['Male', 'Female']">{{gender}}</md-option>
-					</md-select>
+				<md-input-container flex-gt-sm="20" flex-sm>
+					<label>Date of Birth</label>
+					<input type="date" ng-model="user.dob" required> 
 				</md-input-container>
 			</md-content>
 			
@@ -26,47 +28,42 @@
 			<md-content layout-padding layout="row" layout-sm="column">
 				<md-input-container flex-gt-sm="33" flex-sm>
 					<label>NRIC</label>
-					<input ng-pattern="/^[SFTG]\d{7}[A-Z]$/" ng-model="user.nric">
+					<input ng-pattern="/^[SFTG]\d{7}[A-Z]$/" ng-model="user.nric" required>
 				</md-input-container>
 				<md-input-container flex>
 					<label>Mobile No.</label>
-					<input ng-pattern="/^[89]\d{7}$/" ng-model="user.mobileNo">
-				</md-input-container>
-				<md-input-container flex-gt-sm="20" flex-sm>
-					<label>Date of Birth</label>
-					<input type="date" ng-model="user.dob"> 
+					<input ng-pattern="/^[89]\d{7}$/" ng-model="user.mobileNo" required>
 				</md-input-container>
 			</md-content>
 
 			<md-content layout-padding layout="row" layout-sm="column">
 				<md-input-container flex-gt-sm="33" flex>
 					<label>Block Number OR Building Name</label>
-					<input ng-model="user.address.blockNo">
+					<input ng-model="user.address.blockNo" required>
 				</md-input-container>
 				<md-input-container flex>
 					<label>Road Name</label>
-					<input ng-model="user.address.roadName">
+					<input ng-model="user.address.roadName" required>
 				</md-input-container>
 				<md-input-container flex-gt-sm="20" flex>
 					<label>Unit / House No.</label>
-					<input ng-model="user.address.unitNo">
+					<input ng-model="user.address.unitNo" required>
 				</md-input-container>
 			</md-content>
 
 			<md-content layout-padding layout="row" layout-sm="column">
-
-				<md-input-container flex-gt-sm="33" layout="column" layout-align="start" flex>
-					<h1 class="md-title">Highest Qualification</h1>
-					<md-select ng-model="user.qualifications.highest" aria-label="Education Level" placeholder="Highest Educational Qualification">
+				<md-input-container flex-gt-sm="33" layout="row" layout-align="start" flex>
+<!-- 					<h1 class="md-title">Highest Qualification</h1>
+ -->					<md-select ng-model="user.qualifications.highest" aria-label="Education Level" placeholder="Highest Educational Qualification" required>
 						<label layout-padding>Highest Educational Qualification</label>
-						<md-option ng-value="qual" ng-repeat="qual in ['PhD', 'Masters', 'Degree', 'Polytechnic Diploma', 'Junior College - A levels']">{{qual}}</md-option>
+						<md-option ng-value="qual" ng-repeat="qual in ['PhD', 'Masters', 'Degree', 'Undergraduate', 'Polytechnic Diploma', 'Polytechnic Student', 'Junior College - A levels']">{{qual}}</md-option>
 					</md-select>
 				</md-input-container>
 
-				<md-input-container flex-gt-sm="33" layout="column" layout-align="start" flex>
-					<h1 class="md-title">Commitment Period</h1>
-					<md-select ng-model="user.commitmentPeriod" aria-label="Availability" placeholder="How long you wish to give tuition for?">
-						<label layout-padding>How long you wish to give tuition for?</label>
+				<md-input-container layout="row" layout-align="start" flex>
+<!-- 					<h1 class="md-title">Commitment Period</h1>
+ -->					<md-select ng-model="user.commitmentPeriod" aria-label="Availability" placeholder="How long do you wish to give tuition for?">
+						<label layout-padding>How long do you wish to give tuition for?</label>
 						<md-option value="Less than 3 months">
 							Less than 3 months
 						</md-option>
@@ -79,18 +76,36 @@
 					</md-select>
 				</md-input-container>
 
-				<md-input-container flex-gt-sm="33" layout="column" layout-align="start" id="years-experience" flex>
-					<h1 class="md-title">Years of Experience</h1>
-					<md-select ng-model="user.experience.years" aria-label="Availability" placeholder="How long you wish to give tuition for?">
+				<md-input-container flex-gt-sm="20" flex>
+					<md-select ng-model="user.gender" aria-label="Gender" placeholder="Gender" required>
+						<label layout-padding>Gender</label>
+						<md-option ng-value="gender" ng-repeat="gender in ['Male', 'Female']">{{gender}}</md-option>
+					</md-select>
+				</md-input-container>
+
+			</md-content>
+
+			<md-content layout-padding layout="row" layout-sm="column">
+				<md-input-container flex-gt-sm="33" layout="row" layout-align="start" id="years-experience" flex>
+<!-- 					<h1 class="md-title">Years of Experience</h1>
+ -->					<md-select ng-model="user.experience.years" aria-label="Availability" placeholder="How many years have you been teaching tuition?" required>
 						<label layout-padding>How many years have you been teaching tuition?</label>
 						<md-option ng-value="experience" ng-repeat="experience in ['< 1 year', '1 year', '2 years', '3 years', '4 years', '5+ years']">{{experience}}</md-option>
+					</md-select>
+				</md-input-container>
+
+				<md-input-container layout="row" layout-align="start" id="tutor-type" flex>
+<!-- 					<h1 class="md-title">Tutor Type</h1>
+ -->					<md-select ng-model="user.experience.type" aria-label="Availability" placeholder="Which type of tutor are you?">
+						<label layout-padding>Which type of tutor are you?</label>
+						<md-option ng-value="type" ng-repeat="type in ['Part-time Tutor', 'Full-time Tutor', 'NIE Trainee', 'Current MOE Teacher', 'Ex-MOE Teacher']">{{type}}</md-option>
 					</md-select>
 				</md-input-container>
 			</md-content>
 
 			<div flex layout-padding class="preferences" id="locations">
 				<fieldset class="standard" layout-padding>
-					<legend>Preferred Locations</legend>
+					<legend class="md-title">Preferred Teaching Locations <span class="md-subhead text-muted">(Please select at least one)</span></legend>
 					<div layout="row" layout-wrap>
 						<div flex="50">
 							<md-checkbox ng-model="user.preferredLocations.north" aria-label="North">
@@ -132,7 +147,7 @@
 
 			<div flex layout-padding class="preferences" id="student-experience">
 				<fieldset class="standard" layout-padding>
-					<legend>Student Level Experience</legend>
+					<legend class="md-title">Previous Experience <span class="md-subhead text-muted">(Please select at least one)</span></legend>
 
 					<div layout="row" layout-wrap>
 						<div flex="50">
@@ -191,47 +206,48 @@
 
 			<div flex layout-padding class="preferences" id="niche-experience">
 				<fieldset class="standard" layout-padding>
-					<legend>Your Tuition Experiences</legend>
+					<legend class="md-title">Your Teaching Experience <span class="md-subhead text-muted">(Please select at least one)</span></legend>
 					<div layout="row" layout-wrap>
 						<div flex="50">
 							<md-checkbox ng-model="user.experience.oneGrade" aria-label="Experience1">
-								Improving my students’ result by a grade
+								Improved results by one grade
 							</md-checkbox>
 						</div>
 						<div flex="50">
 							<md-checkbox ng-model="user.experience.bigGrade" aria-label="Experience2">
-								Largely improving my students’ results by more than one grade (E.g. Fail to Distinction)
+								Improved results by more than one grade
 							</md-checkbox>
 						</div>
 					</div>
 					<div layout="row" layout-wrap>
 						<div flex="50">
 							<md-checkbox ng-model="user.experience.homework" aria-label="Experience3">
-								Supervising and keeping up with my student’s school homework
+								Supervised school homework
 							</md-checkbox>
 						</div>
 						<div flex="50">
 							<md-checkbox ng-model="user.experience.exams" aria-label="Experience4">
-								Using top schools’ exam papers as practice for my students before tests/examinations
+								Customized own practice materials
 							</md-checkbox>
 						</div>
 					</div>
 					<div layout="row" layout-wrap>
 						<div flex="50">
 							<md-checkbox ng-model="user.experience.interest" aria-label="Experience5">
-								Developing creative and fun methods of learning to instill subject interest in my students
+								Developed creative teaching methods
 							</md-checkbox>
 						</div>
 						<div flex="50">
 							<md-checkbox ng-model="user.experience.patience" aria-label="Experience6">
-								Coaching my student who has special needs with great patience and commitment.
+								Taught special needs students
 							</md-checkbox>
 						</div>
 					</div>
 				</fieldset>
+				<md-divider></md-divider>
 			</div>
 
-			<md-input-container flex-gt-sm="50" layout="column" layout-align="start" layout-padding flex>
+			<!-- <md-input-container flex-gt-sm="50" layout="column" layout-align="start" layout-padding flex>
 				<h1 class="md-title">Type of User</h1>
 				<md-select ng-model="user.identity" aria-label="Identity" placeholder="Are you a tutor or a parent?">
 					<label layout-padding>Are you a tutor or a parent?</label>
@@ -242,9 +258,9 @@
 						Parent
 					</md-option>
 				</md-select>
-			</md-input-container>
+			</md-input-container> -->
 			
-			<md-whiteframe class="md-whiteframe-z1 images-container" layout="column">
+			<!-- <md-whiteframe class="md-whiteframe-z1 images-container" layout="column">
 				<div layout="row" class="images-container-title">
 					<div class="profile-image-container" ng-repeat="image in images | limitTo:-1">
 						<div ng-show="!profileImage || profileImage.length === 0">Upload your profile image below</div>
@@ -260,8 +276,12 @@
 				Put some effort to making your image look better than average for better results!
 			</p>
 
-			<md-button ng-click="check()">Remove Photos</md-button>
-			<div layout-padding layout-align="center center" layout="row">
+			<md-button ng-click="check()">Remove Photos</md-button> -->
+			<div layout-padding layout-align="center center" layout="column">
+				<md-checkbox ng-model="user.agreement" aria-label="agree">
+				I certify that the above information is true and correct.
+				</md-checkbox>
+				
 				<md-button ng-click="save(user); navigate('home')" class="md-accent md-raised">Save my Information</md-button>
 			</div>
 		</form>
