@@ -1,32 +1,70 @@
-angular.module('core').controller('ProfileController', ['$scope', '$meteor', '$state', '$mdDialog',
-    function($scope, $meteor, $state, $mdDialog) {
+angular.module('core').controller('ProfileController', ['$scope', '$meteor', '$state', '$mdDialog', '$mdToast', '$animate',
+    function($scope, $meteor, $state, $mdDialog, $mdToast, $animate) {
 
         $scope.user = $meteor.object(Meteor.users, { _id: Meteor.userId() }, false).subscribe('thisUser');
         $scope.images = $meteor.collectionFS(Images, false, Images).subscribe('images');
+
+        $scope.toastPosition = {
+            bottom: true, 
+            top: false, 
+            left: false, 
+            right: true
+        };
+
+        $scope.getToastPosition = function() {
+            return Object.keys($scope.toastPosition)
+                .filter(function(pos) { return $scope.toastPosition[pos]; })
+                .join(' ');
+        };
+
+        $scope.showSimpleToast = function(message) {
+            $mdToast.show(
+                $mdToast.simple()
+                .content(message)
+                .position($scope.getToastPosition())
+                .hideDelay(3000)
+            );
+        };
+
 
         $scope.navigate = function(routeName){
             $state.go(routeName);
         };
 
         $scope.save = function (user) {
-            Meteor.users.update({ _id: $scope.user._id}, {
-                $set: {
-                    "first_name"    : $scope.user.first_name,
-                    "last_name"     : $scope.user.last_name,
-                    "gender"        : $scope.user.gender,
-                    "nric"          : $scope.user.nric,
-                    "mobileNo"      : $scope.user.mobileNo,
-                    "dob"           : $scope.user.dob,
-                    "address"       : $scope.user.address,
-                    "qualifications": $scope.user.qualifications,
-                    "commitmentPeriod": $scope.user.commitmentPeriod,
-                    "preferredLocations": $scope.user.preferredLocations,
-                    "teachingLevels": $scope.user.teachingLevels,
-                    "experience"    : $scope.user.experience,
-                    "identity"      : $scope.user.identity
+            
+            if (user.agreement) {
+                Meteor.users.update({ _id: $scope.user._id}, {
+                    $set: {
+                        "first_name"    : $scope.user.first_name,
+                        "last_name"     : $scope.user.last_name,
+                        "gender"        : $scope.user.gender,
+                        "nric"          : $scope.user.nric,
+                        "mobileNo"      : $scope.user.mobileNo,
+                        "dob"           : $scope.user.dob,
+                        "address"       : $scope.user.address,
+                        "qualifications": $scope.user.qualifications,
+                        "commitmentPeriod": $scope.user.commitmentPeriod,
+                        "preferredLocations": $scope.user.preferredLocations,
+                        "teachingLevels": $scope.user.teachingLevels,
+                        "experience"    : $scope.user.experience,
+                        "identity"      : $scope.user.identity
+                        }
+                    }, function(err) {
+                        if (err) {
+                            $scope.showSimpleToast('User profile was not updated!');
+                            $scope.navigate('edit-profile');
+                        } else {
+                            $scope.showSimpleToast('User profile was saved successfully!');
+                            $scope.navigate('home');
+                        }
                     }
-                }
-            );
+                );
+                // $scope.showSimpleToast()
+            } else {
+                $scope.showSimpleToast('You must confirm the information is correct.');
+                $scope.navigate('edit-profile');
+            }
         };
         
         $scope.openAddImageModal = function () {

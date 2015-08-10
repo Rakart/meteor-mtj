@@ -206,7 +206,7 @@
 
 			<div flex layout-padding class="preferences" id="niche-experience">
 				<fieldset class="standard" layout-padding>
-					<legend class="md-title">Your Teaching Experience <span class="md-subhead text-muted">(Please select at least one)</span></legend>
+					<legend class="md-title">Your Teaching Experience <span class="md-subhead text-muted">(Please select those that apply)</span></legend>
 					<div layout="row" layout-wrap>
 						<div flex="50">
 							<md-checkbox ng-model="user.experience.oneGrade" aria-label="Experience1">
@@ -282,7 +282,7 @@
 				I certify that the above information is true and correct.
 				</md-checkbox>
 				
-				<md-button ng-click="save(user); navigate('home')" class="md-accent md-raised">Save my Information</md-button>
+				<md-button ng-click="save(user)" class="md-accent md-raised">Save my Information</md-button>
 			</div>
 		</form>
 	</div>

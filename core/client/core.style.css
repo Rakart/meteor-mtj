@@ -99,6 +99,42 @@ md-backdrop, md-sidenav {
   margin: 20px 50px 50px;
 }
 
+/*.sign-up-button {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  margin-left: -106px;
+  margin-bottom: 200px;
+}*/
+
+.home-center {
+  margin-top: 100px;
+  background: none;
+  color: white;
+}
+
+img.bg {
+  min-height: 100%;
+  min-width: 1024px;
+
+  width: 100%;
+  height: auto;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.login-info, .signup-info {
+  background: rgba(0, 0, 0, 0);
+  margin-top: 200px;
+}
+
+.login-form {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+}
+
 /*.profile-image-container {
   width: 200px;
   height: 245px;
