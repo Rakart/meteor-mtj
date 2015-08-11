@@ -5,7 +5,8 @@ angular.module('core').controller('AuthenticationController', ['$scope', '$meteo
 
         vm.credentials = {
             email: '',
-            password: ''
+            password: '' 
+
         };
 
         vm.error = '';
@@ -13,23 +14,26 @@ angular.module('core').controller('AuthenticationController', ['$scope', '$meteo
         vm.login = function (){
             $meteor.loginWithPassword(vm.credentials.email, vm.credentials.password).then(
                 function(){
-                    $state.go('home');
+                    $state.go('edit-profile');
                 },
                 function(err){
-                    vm.error = 'Login error - ' + err;
+                    vm.error = 'Login error: ' + err;
                 }
             );
         };
 
         vm.signup = function (){
-            $meteor.createUser(vm.credentials).then(
-                function(){
-                    $state.go('home');
-                },
+            
+            Accounts.createUser({email: vm.credentials.email, password: vm.credentials.password}, 
                 function(err){
-                    vm.error = 'Registration error - ' + err;
+                if (err) {
+                    console.log('Error creating user: ', err);
+                } else {
+                    var userId = Meteor.user()._id;
+                    Meteor.users.update(userId, {$set: {identity: $scope.identity}});
+                    $state.go('edit-profile');
                 }
-            );
+            });            
         };
     }
 ]);

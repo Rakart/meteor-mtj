@@ -9,50 +9,50 @@
         </md-toolbar>
 
 		<form name="userForm">
-			<md-content layout-padding layout="row" layout-sm="column" class="md-primary">
-				<md-input-container flex-gt-sm="33" flex-sm>
+			<md-content layout-padding layout-gt-md="row" layout="column" class="md-primary">
+				<md-input-container flex-gt-md="33" flex-sm>
 					<label>First Name</label>
 					<input ng-model="user.first_name" required>
 				</md-input-container>
-				<md-input-container flex>
+				<md-input-container flex-gt-md flex>
 					<label>Last Name</label>
 					<input ng-model="user.last_name" required>
 				</md-input-container>
-				<md-input-container flex-gt-sm="20" flex-sm>
+				<md-input-container flex-gt-md="20" flex-sm>
 					<label>Date of Birth</label>
 					<input type="date" ng-model="user.dob" required> 
 				</md-input-container>
 			</md-content>
 			
 			
-			<md-content layout-padding layout="row" layout-sm="column">
-				<md-input-container flex-gt-sm="33" flex-sm>
+			<md-content layout-padding layout-gt-md="row" layout="column">
+				<md-input-container flex-gt-md="33" flex-sm>
 					<label>NRIC</label>
 					<input ng-pattern="/^[SFTG]\d{7}[A-Z]$/" ng-model="user.nric" required>
 				</md-input-container>
-				<md-input-container flex>
+				<md-input-container flex-gt-md>
 					<label>Mobile No.</label>
 					<input ng-pattern="/^[89]\d{7}$/" ng-model="user.mobileNo" required>
 				</md-input-container>
 			</md-content>
 
-			<md-content layout-padding layout="row" layout-sm="column">
-				<md-input-container flex-gt-sm="33" flex>
+			<md-content layout-padding layout-gt-md="row" layout="column">
+				<md-input-container flex-gt-md="33" flex-sm>
 					<label>Block Number OR Building Name</label>
 					<input ng-model="user.address.blockNo" required>
 				</md-input-container>
-				<md-input-container flex>
+				<md-input-container flex-gt-md>
 					<label>Road Name</label>
 					<input ng-model="user.address.roadName" required>
 				</md-input-container>
-				<md-input-container flex-gt-sm="20" flex>
+				<md-input-container flex-gt-md="20" flex>
 					<label>Unit / House No.</label>
 					<input ng-model="user.address.unitNo" required>
 				</md-input-container>
 			</md-content>
 
-			<md-content layout-padding layout="row" layout-sm="column">
-				<md-input-container flex-gt-sm="33" layout="row" layout-align="start" flex>
+			<md-content layout-padding layout-gt-md="row" layout="column">
+				<md-input-container flex-gt-md="33" layout="row" layout-align="start" flex>
 <!-- 					<h1 class="md-title">Highest Qualification</h1>
  -->					<md-select ng-model="user.qualifications.highest" aria-label="Education Level" placeholder="Highest Educational Qualification" required>
 						<label layout-padding>Highest Educational Qualification</label>
@@ -60,7 +60,7 @@
 					</md-select>
 				</md-input-container>
 
-				<md-input-container layout="row" layout-align="start" flex>
+				<md-input-container layout="row" layout-align="start" flex-gt-md>
 <!-- 					<h1 class="md-title">Commitment Period</h1>
  -->					<md-select ng-model="user.commitmentPeriod" aria-label="Availability" placeholder="How long do you wish to give tuition for?">
 						<label layout-padding>How long do you wish to give tuition for?</label>
@@ -76,7 +76,7 @@
 					</md-select>
 				</md-input-container>
 
-				<md-input-container flex-gt-sm="20" flex>
+				<md-input-container flex-gt-md="20" flex>
 					<md-select ng-model="user.gender" aria-label="Gender" placeholder="Gender" required>
 						<label layout-padding>Gender</label>
 						<md-option ng-value="gender" ng-repeat="gender in ['Male', 'Female']">{{gender}}</md-option>
@@ -85,8 +85,8 @@
 
 			</md-content>
 
-			<md-content layout-padding layout="row" layout-sm="column">
-				<md-input-container flex-gt-sm="33" layout="row" layout-align="start" id="years-experience" flex>
+			<md-content layout-padding layout-gt-md="row" layout="column">
+				<md-input-container flex-gt-md="50" layout="row" layout-align="start" id="years-experience" flex>
 <!-- 					<h1 class="md-title">Years of Experience</h1>
  -->					<md-select ng-model="user.experience.years" aria-label="Availability" placeholder="How many years have you been teaching tuition?" required>
 						<label layout-padding>How many years have you been teaching tuition?</label>
@@ -94,7 +94,7 @@
 					</md-select>
 				</md-input-container>
 
-				<md-input-container layout="row" layout-align="start" id="tutor-type" flex>
+				<md-input-container layout="row" layout-align="start" id="tutor-type" flex-gt-md>
 <!-- 					<h1 class="md-title">Tutor Type</h1>
  -->					<md-select ng-model="user.experience.type" aria-label="Availability" placeholder="Which type of tutor are you?">
 						<label layout-padding>Which type of tutor are you?</label>

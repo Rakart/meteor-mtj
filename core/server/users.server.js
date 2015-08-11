@@ -73,8 +73,8 @@ Accounts.onCreateUser(function(options, user) {
 	user.preferredLocations = {};
 	user.teachingLevels = {};
 	user.experience = {};
-	user.identity = '';
 	user.favourites = [];
+	user.identity = '';
 
 	return user;
 });

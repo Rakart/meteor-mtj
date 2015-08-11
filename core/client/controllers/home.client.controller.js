@@ -1,5 +1,5 @@
-angular.module('core').controller('HomeController', ['$scope', '$meteor',
-    function($scope, $meteor) {
+angular.module('core').controller('HomeController', ['$scope', '$meteor', '$state',
+    function($scope, $meteor, $state) {
 
 		$scope.users = $meteor.collection(Meteor.users, false).subscribe('users');
 		$scope.thisUser = $meteor.object(Meteor.users, { _id: Meteor.userId() }, false).subscribe('thisUser');
@@ -8,6 +8,10 @@ angular.module('core').controller('HomeController', ['$scope', '$meteor',
 		
 		$scope.remove = function(user) {
 			$scope.users.remove(user);
-		}
+		};
+
+		$scope.navigate = function(routeName){
+			$state.go(routeName);
+		};
     }
 ]);

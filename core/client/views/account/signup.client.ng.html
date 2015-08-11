@@ -6,7 +6,7 @@
 				<div layout="column" flex-gt-sm="20" flex-gt-md="33" flex-sm="10"></div>
 				<md-content layout-padding layout="column" flex-sm="80" flex-gt-sm="60" flex-gt-md="33" class="md-primary signup-info">
 					<div class="md-whiteframe-z3 login-form" layout-padding>
-						<h1 class="md-display-1 text-center">Sign Up</h1>
+						<h1 class="md-display-1 text-center">Sign Up {{identity}}</h1>
 						<md-input-container flex>
 							<label>Email</label>
 							<input name="email" ng-model="AC.credentials.email" type="email" required email>
@@ -15,9 +15,20 @@
 							<label>Password</label>
 							<input name="password" ng-model="AC.credentials.password" type="password" required>
 						</md-input-container>
+						<md-radio-group ng-model="identity" layout="row">
+							<md-radio-button value="tutor" class="md-primary" offset="20" flex="30">
+								I'm a Tutor
+							</md-radio-button>
+							<md-radio-button value="parent" class="md-primary" ng-disabled="true" flex="30">
+								I'm a Parent
+								<md-tooltip>
+          							Parent Profiles coming soon...
+        						</md-tooltip>
+							</md-radio-button>
+						</md-radio-group>	
 						<br>
 						<div layout="row" layout-align="center center">
-							<md-button type="submit" class="md-accent md-raised" value="Sign Up">Sign Up</md-button>
+							<md-button type="submit" class="md-warn md-raised" value="Sign Up">Sign Up</md-button>
 						</div>
 					</div><!-- end of sign-up card -->
 				</md-content>
