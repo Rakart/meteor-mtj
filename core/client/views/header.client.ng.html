@@ -10,7 +10,7 @@
 
 			<span flex></span>
 			<div>
-				<h5 ng-show="$root.currentUser">Logged in as ({{ $root.currentUser.emails[0].address }}) as a {{$root.currentUser.identity}}</h5>
+				<h5 ng-show="$root.currentUser">Logged in as ({{ $root.currentUser.emails[0].address }})</h5>
 				<md-button ng-click="navigate('login')" ng-hide="$root.currentUser">Login</md-button>
 				<md-button ng-click="navigate('signup')" ng-hide="$root.currentUser">Sign Up</md-button>
 			</div>
@@ -47,6 +47,9 @@
 					</md-list-item>
 					<md-list-item ng-click="navigate('favourites')">
 						<p>My Favourites List</p>
+					</md-list-item>
+					<md-list-item ng-click="navigate('dashboard')">
+						<p>Dashboard</p>
 					</md-list-item>
 					
 					<md-list-item ng-click="navigate('logout')">

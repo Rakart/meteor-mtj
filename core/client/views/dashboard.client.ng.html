@@ -1,0 +1,20 @@
+<md-card class="user-dashboard">
+	<md-card-content ng-repeat="user in users" layout="column" layout-align="space-between left">
+		<h3 class="md-subhead">Email: <span class="md-body-2">{{user.emails[0].address}}</span></h3>
+		<h5 class="md-subhead">Name: <span class="md-body-2">{{user.first_name + ' ' + user.last_name}}</span></h5>
+		<h5 class="md-subhead">DOB: <span class="md-body-2">{{user.dob}}</span></h5>
+		<h5 class="md-subhead">Mobile: <span class="md-body-2">{{user.mobileNo}}</span></h5>
+		<h5 class="md-subhead">NRIC: <span class="md-body-2">{{user.nric}}</span></h5>
+		<h5 class="md-subhead">Address: <span class="md-body-2">{{user.address.blockNo + ', ' + user.address.roadName + ', ' + user.address.unitNo}}</span></h5>
+		<h5 class="md-subhead">Qualifications: <span class="md-body-2">{{user.qualifications.highest}}</span></h5>
+		<h5 class="md-subhead">Commitment Period: <span class="md-body-2">{{user.commitmentPeriod}}</span></h5>
+		<h5 class="md-subhead">Gender: <span class="md-body-2">{{user.gender}}</span></h5>
+		<h5 class="md-subhead">Years of experience: <span class="md-body-2">{{user.experience.years}}</span></h5>
+		<h5 class="md-subhead">Type of Tutor: <span class="md-body-2">{{user.experience.type}}</span></h5>
+		<h5 class="md-subhead">Levels: <span class="md-body-2">{{user.teachingLevels}} </span></h5>
+		<h5 class="md-subhead">Location: <span class="md-body-2">{{user.preferredLocations}} </span></h5>
+		<h5 class="md-subhead">Experience: <span class="md-body-2">{{user.experience}} </span></h5>
+		<md-button ng-click="remove(user._id)">Remove User</md-button>
+		<md-divider></md-divider>
+	</md-card-content>
+</md-card>

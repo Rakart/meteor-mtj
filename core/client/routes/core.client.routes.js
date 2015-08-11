@@ -63,6 +63,11 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider', '$locatio
 			url: '/favourites',
 			templateUrl: 'core/client/views/account/favourites.client.ng.html',
 			controller: 'FavouritesController'
+		}).
+		state('dashboard', {
+			url: '/dashboard',
+			templateUrl: 'core/client/views/dashboard.client.ng.html',
+			controller: 'DashboardController'
 		});
 	}
 ]);
