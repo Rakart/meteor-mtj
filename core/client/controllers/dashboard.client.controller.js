@@ -13,5 +13,9 @@ angular.module('core').controller('DashboardController', ['$scope', '$meteor', '
 		$scope.navigate = function(routeName){
 			$state.go(routeName);
 		};
+
+		$scope.getKeys = function(obj) {
+			return Object.keys(obj);
+		};
     }
 ]);
