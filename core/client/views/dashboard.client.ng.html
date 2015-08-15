@@ -3,7 +3,7 @@
 		<div layout="column" flex="50">
 			<h5 class="md-title">Email: <span class="md-body-2">{{user.emails[0].address}}</span></h5>
 			<h5 class="md-title">Name: <span class="md-body-2">{{user.first_name + ' ' + user.last_name}}</span></h5>
-			<h5 class="md-title">DOB: <span class="md-body-2">{{user.dob}}</span></h5>
+			<h5 class="md-title">DOB: <span class="md-body-2">{{user.dob | date:"dd MMM yyyy"}}</span></h5>
 			<h5 class="md-title">Mobile: <span class="md-body-2">{{user.mobileNo}}</span></h5>
 			<h5 class="md-title">NRIC: <span class="md-body-2">{{user.nric}}</span></h5>
 			<h5 class="md-title">Address: <span class="md-body-2">{{user.address.blockNo + ', ' + user.address.roadName + ', ' + user.address.unitNo}}</span></h5>
@@ -26,4 +26,4 @@
 		<span flex></span>
 		<md-button ng-click="remove(user._id)" class="md-raised md-warn" flex="20">Remove User</md-button>
 	</div>
-</md-card>an
+</md-card>

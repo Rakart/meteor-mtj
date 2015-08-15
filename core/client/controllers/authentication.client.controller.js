@@ -17,7 +17,8 @@ angular.module('core').controller('AuthenticationController', ['$scope', '$meteo
                     $state.go('edit-profile');
                 },
                 function(err){
-                    vm.error = 'Login error: ' + err;
+                    vm.error = 'Login Error: ' + err.reason;
+                    console.log(err);
                 }
             );
         };
@@ -27,7 +28,8 @@ angular.module('core').controller('AuthenticationController', ['$scope', '$meteo
             Accounts.createUser({email: vm.credentials.email, password: vm.credentials.password}, 
                 function(err){
                 if (err) {
-                    console.log('Error creating user: ', err);
+                    vm.error = 'Sign Up Error: ' + err.reason;
+                    console.log(err);
                 } else {
                     var userId = Meteor.user()._id;
                     Meteor.users.update(userId, {$set: {identity: $scope.identity}});

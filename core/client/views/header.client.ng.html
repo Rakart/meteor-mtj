@@ -31,23 +31,33 @@
 		<md-content data-ng-controller="HeaderController" layout-fill>
 			<md-list>
 
-				<md-subheader>My Tutor Jungle</md-subheader>
+				<!-- <md-subheader>My Tutor Jungle</md-subheader>
 				<md-list-item ng-click="navigate('pricing')">
 					<p>Pricing Plans</p>
 				</md-list-item>
 				<md-list-item ng-click="navigate('jungle')">
 					<p>Tutor Jungle</p>
+				</md-list-item> -->
+				<md-subheader>My Tutor Jungle</md-subheader>
+				<md-list-item ng-click="navigate('signup')">
+					<p>Sign Up</p>
 				</md-list-item>
-
+				<md-list-item ng-click="navigate('login')">
+					<p>Login</p>
+				</md-list-item>
+				<md-list-item ng-click="navigate('home')">
+					<p>About Us</p>
+				</md-list-item>
+				
 				<md-divider></md-divider>
 				<div ng-show="$root.currentUser">
 					<md-subheader>My Account</md-subheader>
 					<md-list-item ng-click="navigate('edit-profile')">
 						<p>Edit Profile</p>
 					</md-list-item>
-					<md-list-item ng-click="navigate('favourites')">
+					<!-- <md-list-item ng-click="navigate('favourites')">
 						<p>My Favourites List</p>
-					</md-list-item>
+					</md-list-item> -->
 					<md-list-item ng-click="navigate('dashboard')">
 						<p>Dashboard</p>
 					</md-list-item>
