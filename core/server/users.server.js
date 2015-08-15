@@ -1,6 +1,24 @@
-// publish all users data
+
+var ADMIN_USERS = ['angeline.tanjt@gmail.com', 'carlos.greblo@gmail.com'];
+	function isAdmin(userId) {
+	 	var user = Meteor.users.findOne({_id: userId});
+		
+		try {
+			
+			return ADMIN_USERS.indexOf(user.emails[0].address) !== -1
+		
+		} catch(e) {
+	  		
+	  		return false;
+	}
+}
+
+
+// publish all users data only if user as an admin
 Meteor.publish('users', function() {
-	return Meteor.users.find({});
+	if (isAdmin(this.userId)){
+		return Meteor.users.find({});
+	}
 });
 
 // publish all users that are 'tutors'

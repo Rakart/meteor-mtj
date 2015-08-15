@@ -135,6 +135,38 @@ img.bg {
   border-radius: 5px;
 }
 
+
+
+.social-media a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 2em;
+  margin-right: 0.3em;
+}
+
+.social-media a:hover {
+  color: white;
+}
+
+.social-media ul {
+  margin-bottom: 0;
+  padding-left: 0.3em;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.social-media li {
+  display: inline;
+}
+
+.business-no p {
+  color: rgba(255, 255, 255, 7);
+  font-size: 0.8em;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
 /*.profile-image-container {
   width: 200px;
   height: 245px;

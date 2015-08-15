@@ -21,7 +21,9 @@
 					<div layout="row" layout-align="center center">
 						<md-button type="submit" class="md-accent md-raised">Login</md-button>
 					</div>
-				</div> 
+          <div ng-show="AC.error" class="md-warn"><small>{{ AC.error }}</small></div>
+				  </div>
+      <meteor-include src="footer"></meteor-include>     
 			</md-content>
 			<div layout="column" flex-gt-sm="20" flex-gt-md="33" flex-sm="10"></div>
 		</div>

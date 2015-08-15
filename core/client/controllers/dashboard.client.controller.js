@@ -1,5 +1,5 @@
 angular.module('core').controller('DashboardController', ['$scope', '$meteor', '$state',
-    function($scope, $meteor, $state) {
+  function($scope, $meteor, $state) {
 
 		$scope.users = $meteor.collection(Meteor.users, false).subscribe('users');
 		$scope.thisUser = $meteor.object(Meteor.users, { _id: Meteor.userId() }, false).subscribe('thisUser');
@@ -17,5 +17,5 @@ angular.module('core').controller('DashboardController', ['$scope', '$meteor', '
 		$scope.getKeys = function(obj) {
 			return Object.keys(obj);
 		};
-    }
+  }
 ]);
