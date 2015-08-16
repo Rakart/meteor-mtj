@@ -22,17 +22,17 @@ Meteor.publish('users', function() {
 });
 
 // publish all users that are 'tutors'
-Meteor.publish('tutors', function() {
-	return Meteor.users
-		.find({identity: 'tutor'}, { fields: {
-            first_name: 1,
-            last_name: 1,
-            qualifications: 1,
-            experience: 1,
-            commitmentPeriod: 1
-            }
-        });
-});
+// Meteor.publish('tutors', function() {
+// 	return Meteor.users
+// 		.find({identity: 'tutor'}, { fields: {
+//             first_name: 1,
+//             last_name: 1,
+//             qualifications: 1,
+//             experience: 1,
+//             commitmentPeriod: 1
+//             }
+//         });
+// });
 
 // publish all users that are 'parents'
 Meteor.publish('parents', function() {

@@ -113,6 +113,39 @@ md-backdrop, md-sidenav {
   color: white;
 }
 
+.about {
+  background: none;
+}
+
+.about md-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+}
+
+.about-us-toolbar {
+  border-radius: 5px 5px 0 0;
+}
+
+.hello-style {
+  font-style: italic;
+  font-weight: bold;
+  color: red;
+
+}
+
+.bragging-words ul {
+  list-style: none;
+}
+
+.bragging-words ul li {
+
+}
+
+.who-are-we {
+  color: red;
+  font-weight: bold;
+}
+
 img.bg {
   min-height: 100%;
   min-width: 1024px;

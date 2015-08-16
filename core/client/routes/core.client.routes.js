@@ -68,6 +68,11 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider', '$locatio
 			url: '/dashboard',
 			templateUrl: 'core/client/views/dashboard.client.ng.html',
 			controller: 'DashboardController'
+		}).
+		state('about', {
+			url: '/about',
+			templateUrl: 'core/client/views/about.client.ng.html',
+			controller: 'HomeController'
 		});
 	}
 ]);
