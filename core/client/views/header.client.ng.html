@@ -10,22 +10,34 @@
 
 			<span flex></span>
 			<div>
-				<h5 ng-show="$root.currentUser">Logged in as ({{ $root.currentUser.emails[0].address }})</h5>
-				<md-button ng-click="navigate('login')" ng-hide="$root.currentUser">Login</md-button>
-				<md-button ng-click="navigate('signup')" ng-hide="$root.currentUser">Sign Up</md-button>
+				<h5 ng-show="$root.currentUser">Welcome, {{ $root.currentUser.emails[0].address }}.</h5>
+				
+				<md-button ng-click="navigate('login')" ng-hide="$root.currentUser">
+				<i class="fa fa-sign-in"></i>
+				Login
+				</md-button>
+				
+				<md-button ng-click="navigate('signup')" ng-hide="$root.currentUser">
+				<i class="fa fa-pencil-square-o"></i>
+				Sign Up
+				</md-button>
+			
 			</div>
 			<div>
-				<md-button ng-click="navigate('logout')" ng-show="$root.currentUser">Logout</md-button>
+				<md-button ng-click="navigate('logout')" ng-show="$root.currentUser">
+				<i class="fa fa-sign-out"></i>
+				Logout
+				</md-button>
 			</div>
 		</div>
 	</md-toolbar>
 </div>
 
 <section layout="row" flex>
-	<md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+	<md-sidenav class="md-sidenav-left mtj-sidenav md-whiteframe-z2" md-component-id="left">
 		
 		<md-toolbar>
-			<h1 class="md-toolbar-tools">My Tutor Jungle Dashboard</h1>
+			<h1 class="md-toolbar-tools">My Tutor Jungle</h1>
 		</md-toolbar>
 
 		<md-content data-ng-controller="HeaderController" layout-fill>
@@ -39,31 +51,37 @@
 					<p>Tutor Jungle</p>
 				</md-list-item> -->
 				<md-subheader>My Tutor Jungle</md-subheader>
-				<md-list-item ng-click="navigate('signup')">
-					<p>Sign Up</p>
+				<md-list-item ng-click="navigate('signup')" layout="row" ng-hide="$root.currentUser">
+					<p flex="90">Sign Up</p>
+					<i class="fa fa-pencil-square-o" flex="10"></i>
 				</md-list-item>
-				<md-list-item ng-click="navigate('login')">
-					<p>Login</p>
+				<md-list-item ng-click="navigate('login')" layout="row" ng-hide="$root.currentUser">
+					<p flex="90">Login</p>
+					<i class="fa fa-sign-in" flex="10"></i>
 				</md-list-item>
-				<md-list-item ng-click="navigate('about')">
-					<p>About Us</p>
+				<md-list-item ng-click="navigate('about')" layout="row">
+					<p flex="90">About Us</p>
+					<i class="fa fa-info-circle" flex="10"></i>
 				</md-list-item>
 				
 				<md-divider></md-divider>
 				<div ng-show="$root.currentUser">
 					<md-subheader>My Account</md-subheader>
-					<md-list-item ng-click="navigate('edit-profile')">
-						<p>Edit Profile</p>
+					<md-list-item ng-click="navigate('edit-profile')" layout="row">
+						<p flex="90">Edit Profile</p>
+						<i class="fa fa-pencil" flex="10"></i>
 					</md-list-item>
 					<!-- <md-list-item ng-click="navigate('favourites')">
-						<p>My Favourites List</p>
+						<p flex="90">My Favourites List</p>
 					</md-list-item> -->
-					<md-list-item ng-click="navigate('dashboard')">
-						<p>Dashboard</p>
+					<md-list-item ng-click="navigate('dashboard')" layout="row">
+						<p flex="90">Dashboard</p>
+						<i class="fa fa-tachometer" flex="10"></i>
 					</md-list-item>
 					
-					<md-list-item ng-click="navigate('logout')">
-						<p>Logout</p>
+					<md-list-item ng-click="navigate('logout')" layout="row">
+						<p flex="90">Logout</p>
+						<i class="fa fa-sign-out" flex="10"></i>
 					</md-list-item>
 				</div>
 			</md-list>

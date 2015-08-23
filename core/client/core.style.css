@@ -108,7 +108,7 @@ md-backdrop, md-sidenav {
 }*/
 
 .home-center {
-  margin-top: 100px;
+  margin-top: 0;
   background: none;
   color: white;
 }
@@ -227,4 +227,7 @@ img.bg {
   background-color: aliceblue;
 }*/
 
-
+.mtj-sidenav {
+  width: 200px;
+  min-width: 200px;
+}
