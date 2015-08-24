@@ -12,6 +12,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 	<link rel="icon" href="/favicon.ico?v=2">
+	<link href='http://fonts.googleapis.com/css?family=Patua+One' rel='stylesheet' type='text/css'>
 
 </head>
 
@@ -22,7 +23,7 @@
 		<header data-ng-include="'core/client/views/header.client.ng.html'"></header>
 
 		<!-- Container #2 Bottom -->
-		<md-content layout-padding layout="column" flex>
+		<md-content layout="column" flex>
 			<section data-ui-view layout="column" flex></section>
 		</md-content>
 
@@ -30,14 +31,16 @@
 </body>
 
 <template name="footer">
-	<div class="social-media text-center">
-		<ul>
-		  	<li><a href="http://www.facebook.com/mytutorjungle" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
-		  	<li><a href="https://plus.google.com/106400129743868886514" target="_blank"><i class="fa fa-google-plus-square"></i></a></li>
-			<li><a href="http://www.pinterest.com/mytutorjungle" target="_blank"><i class="fa fa-pinterest-square"></i></a></li>
-		</ul>
-	</div>
-	<div class="business-no">
-		<p>Registration No. 53308090L | Copyright &copy; 2015. All rights reserved. </p>
+	<div class="footer">
+		<div class="social-media text-center">
+			<ul>
+			  	<li><a href="http://www.facebook.com/mytutorjungle" target="_blank"><i class="fa fa-facebook-square"></i></a></li>
+			  	<li><a href="https://plus.google.com/106400129743868886514" target="_blank"><i class="fa fa-google-plus-square"></i></a></li>
+				<li><a href="http://www.pinterest.com/mytutorjungle" target="_blank"><i class="fa fa-pinterest-square"></i></a></li>
+			</ul>
+		</div>
+		<div class="business-no">
+			<p>Registration No. 53308090L | Copyright &copy; 2015. All rights reserved. </p>
+		</div>
 	</div>
 </template>

@@ -109,8 +109,12 @@ md-backdrop, md-sidenav {
 
 .home-center {
   margin-top: 0;
-  background: none;
+  background: rgba(0,0,0,0.3);
   color: white;
+}
+
+.home-center h1 {
+  font-family: 'Patua One', cursive;
 }
 
 .about {
@@ -198,6 +202,23 @@ img.bg {
   position: fixed;
   right: 0;
   bottom: 0;
+}
+
+.sign-up-button {
+  position: fixed;
+  bottom: 10%;
+  left: 10%;
+}
+
+.modded-button {
+  font-family: 'Patua One', cursive;
+}
+
+#sign-up-link {
+  text-decoration: underline;
+  font-style: italic;
+  color: #F50057; /* pink A400 */
+  background: rgba(255,255,255,0.3);
 }
 
 /*.profile-image-container {

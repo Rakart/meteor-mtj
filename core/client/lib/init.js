@@ -20,6 +20,9 @@ angular.module(ApplicationConfiguration.applicationModuleName).config([
 				'default': '500', // use shade 200 for default, and keep all other shades the same
 				'hue-1': '800',
 				'hue-2': '900'
+			})
+			.warnPalette('pink', {
+				'default': 'A400'
 			});
 			// .backgroundPalette('light-blue', {
 			// 	'default': '50'

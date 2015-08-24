@@ -1,19 +1,20 @@
 <div class="landing">
 	
-	<img src="/landing-page5.jpg" class="bg" alt="image you want in background"/>
+	<img src="/landing-page6.jpg" class="bg" alt="image you want in background"/>
 	
 	<md-content class="home-center" layout="column" layout-padding>
 		<div class="text-center" flex="90">
 			<h1 class="md-display-4" flex="33">My Tutor Jungle</h1>
-			<h4 class="md-display-1" flex="33">Let's get started.</h4>
-			<br>
+			<h4 class="md-display-1" flex="33">Opportunities to teach the <a id="sign-up-link" href="#" ng-click="navigate('signup')">rite</a> way.
+				
+			</h4>
 		</div>
-		<div class="text-center sign-up-button" flex>
-			<md-button class="md-raised md-warn" ng-click="navigate('signup')" layout-padding>Sign Up as a Tutor today</md-button>
-		</div>
-		<br>
 		<meteor-include	src="footer"></meteor-include>
 	</md-content>
+	<br>
+	<div class="text-center modded-button sign-up-button" flex>
+		<md-button class="md-raised md-warn" ng-click="navigate('signup')" layout-padding>Get Started</md-button>
+	</div>
 </div>
 
 
