@@ -1,5 +1,5 @@
 <section class="row">
-	<img src="/landing-page.jpg" class="bg" alt="image you want in background"/>
+	<img src="/landing-page6.jpg" class="bg" alt="image you want in background"/>
   <form name="userForm" data-ng-submit="AC.login()">
 		<div layout="row" layout-wrap>
 			<div layout="column" flex-gt-sm="20" flex-gt-md="33" flex-sm="10"></div>
@@ -7,7 +7,7 @@
 				  
           <div class="md-whiteframe-z3 login-form" layout-padding>
 
-					<h1 class="md-display-1 text-center">Login</h1>
+					<h1 class="md-display-1 text-center modded-button">Login</h1>
 					<md-input-container flex>
 						<label>Email</label>
 						<input name="email" ng-model="AC.credentials.email" type="email" ui-validate="email">
@@ -19,7 +19,7 @@
 					</md-input-container>
 					<br>
 					<div layout="row" layout-align="center center">
-						<md-button type="submit" class="md-accent md-raised">Login</md-button>
+						<md-button type="submit" class="md-accent md-raised modded-button">Login</md-button>
 					</div>
           <div ng-show="AC.error" class="md-warn"><small>{{ AC.error }}</small></div>
 				  </div>

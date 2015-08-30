@@ -1,12 +1,12 @@
 <section class="row">
 	<div layout="column">
-		<img src="/landing-page.jpg" class="bg" alt="image you want in background"/>
+		<img src="/landing-page6.jpg" class="bg" alt="image you want in background"/>
 		<form name="userForm" ng-submit="AC.signup()">
 			<div layout="row" layout-wrap>
 				<div layout="column" flex-gt-sm="20" flex-gt-md="33" flex-sm="10"></div>
 				<md-content layout-padding layout="column" flex-sm="80" flex-gt-sm="60" flex-gt-md="33" class="md-primary signup-info">
 					<div class="md-whiteframe-z3 login-form" layout-padding>
-						<h1 class="md-display-1 text-center">Sign Up</h1>
+						<h1 class="md-display-1 text-center modded-button">Sign Up</h1>
 						<md-input-container flex>
 							<label>Email</label>
 							<input name="email" ng-model="AC.credentials.email" type="email" required email>
@@ -28,7 +28,7 @@
 						</md-radio-group>	
 						<br>
 						<div layout="row" layout-align="center center">
-							<md-button type="submit" class="md-warn md-raised" value="Sign Up">Sign Up</md-button>
+							<md-button type="submit" class="md-warn md-raised modded-button" value="Sign Up">Sign Up</md-button>
 						</div>
 						<div ng-show="AC.error" class="md-warn"><small>{{ AC.error }}</small></div>
 					</div><!-- end of sign-up card -->

@@ -119,6 +119,7 @@ md-backdrop, md-sidenav {
 
 .about {
   background: none;
+  margin-top: 50px;
 }
 
 .about md-card {
@@ -130,11 +131,29 @@ md-backdrop, md-sidenav {
   border-radius: 5px 5px 0 0;
 }
 
+/*.about-us > p {
+  text-indent: 50px;
+}*/
+
+.about-us .large {
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 .hello-style {
   font-style: italic;
   font-weight: bold;
   color: red;
 
+}
+
+/*.bragging-words {
+  color: green;
+}*/
+
+.bragging-words p {
+  font-weight: bold;
 }
 
 .bragging-words ul {
@@ -143,11 +162,6 @@ md-backdrop, md-sidenav {
 
 .bragging-words ul li {
 
-}
-
-.who-are-we {
-  color: red;
-  font-weight: bold;
 }
 
 img.bg {
@@ -168,11 +182,9 @@ img.bg {
 }
 
 .login-form {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
 }
-
-
 
 .social-media a {
   color: rgba(255, 255, 255, 0.7);
@@ -212,6 +224,7 @@ img.bg {
 
 .modded-button {
   font-family: 'Patua One', cursive;
+  text-transform: uppercase;
 }
 
 #sign-up-link {
@@ -219,6 +232,12 @@ img.bg {
   font-style: italic;
   color: #F50057; /* pink A400 */
   background: rgba(255,255,255,0.3);
+}
+
+.main-points {
+  color: #F50057; /* pink A400 */
+  /*font-style: italic;*/
+  font-weight: bold;
 }
 
 /*.profile-image-container {
