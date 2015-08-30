@@ -37,7 +37,7 @@
 	<md-sidenav class="md-sidenav-left mtj-sidenav md-whiteframe-z2" md-component-id="left">
 		
 		<md-toolbar>
-			<h1 class="md-toolbar-tools">My Tutor Jungle</h1>
+			<h1 class="md-toolbar-tools modded-button">My Tutor Jungle</h1>
 		</md-toolbar>
 
 		<md-content data-ng-controller="HeaderController" layout-fill>
@@ -50,7 +50,7 @@
 				<md-list-item ng-click="navigate('jungle')">
 					<p>Tutor Jungle</p>
 				</md-list-item> -->
-				<md-subheader>My Tutor Jungle</md-subheader>
+				<!-- <md-subheader>My Tutor Jungle</md-subheader> -->
 				<md-list-item ng-click="navigate('signup')" layout="row" ng-hide="$root.currentUser">
 					<p flex="90">Sign Up</p>
 					<i class="fa fa-pencil-square-o" flex="10"></i>
@@ -66,7 +66,7 @@
 				
 				<md-divider></md-divider>
 				<div ng-show="$root.currentUser">
-					<md-subheader>My Account</md-subheader>
+					<md-subheader class="modded-button">My Account</md-subheader>
 					<md-list-item ng-click="navigate('edit-profile')" layout="row">
 						<p flex="90">Edit Profile</p>
 						<i class="fa fa-pencil" flex="10"></i>
@@ -74,10 +74,10 @@
 					<!-- <md-list-item ng-click="navigate('favourites')">
 						<p flex="90">My Favourites List</p>
 					</md-list-item> -->
-					<md-list-item ng-click="navigate('dashboard')" layout="row">
+					<!-- <md-list-item ng-click="navigate('dashboard')" layout="row">
 						<p flex="90">Dashboard</p>
 						<i class="fa fa-tachometer" flex="10"></i>
-					</md-list-item>
+					</md-list-item> -->
 					
 					<md-list-item ng-click="navigate('logout')" layout="row">
 						<p flex="90">Logout</p>

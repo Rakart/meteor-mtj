@@ -23,6 +23,9 @@ angular.module(ApplicationConfiguration.applicationModuleName).config([
 			})
 			.warnPalette('pink', {
 				'default': 'A400'
+			})
+			.backgroundPalette('grey', {
+				'default': '200'
 			});
 			// .backgroundPalette('light-blue', {
 			// 	'default': '50'
