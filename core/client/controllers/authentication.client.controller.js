@@ -24,7 +24,6 @@ angular.module('core').controller('AuthenticationController', ['$scope', '$meteo
         };
 
         vm.signup = function (){
-            
             Accounts.createUser({email: vm.credentials.email, password: vm.credentials.password}, 
                 function(err){
                 if (err) {

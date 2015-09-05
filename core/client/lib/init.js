@@ -19,7 +19,8 @@ angular.module(ApplicationConfiguration.applicationModuleName).config([
 			.accentPalette('indigo', {
 				'default': '500', // use shade 200 for default, and keep all other shades the same
 				'hue-1': '800',
-				'hue-2': '900'
+				'hue-2': '900',
+				'hue-3': '50'
 			})
 			.warnPalette('pink', {
 				'default': 'A400'
