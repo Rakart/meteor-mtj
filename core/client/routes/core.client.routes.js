@@ -73,6 +73,11 @@ angular.module('core').config(['$stateProvider', '$urlRouterProvider', '$locatio
 			url: '/about',
 			templateUrl: 'core/client/views/about.client.ng.html',
 			controller: 'HomeController'
+		}).
+		state('faq', {
+			url: '/faq',
+			templateUrl: 'core/client/views/faq.client.ng.html',
+			controller: 'HomeController'
 		});
 	}
 ]);
